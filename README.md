@@ -3,6 +3,8 @@ python-versify : client to the Bible api platforms python friendly
 
 python-versify is a pure python library wich can find many verses on the bible. The lib relies on Dbt.io for get contents.
 
+[![Build Status](https://travis-ci.org/willinprogress/python-versify.svg?branch=master)](https://travis-ci.org/willinprogress/python-versify)
+
 Look how python-versify is usefull
 
 ```python
@@ -42,7 +44,7 @@ lang = FRN
 Documentation
 -------------
 
-Documentation is available on []()
+Complete documentation is available on [this link](https://python-versify.readthedocs.io/en/latest/index.html)
 
 How to Contribute
 -----------------
