@@ -8,10 +8,10 @@ class Version:
         self.code = code
         self.testaments = []
 
-    def get_testaments(self):
+    def get_testaments(self, dbt):
         t = []
-        url = util.Dbt.Dbt.get_api_url("/library/volume", {"language_family_code": util.Dbt.Dbt.language, "media": "text"})
-        testaments = util.Dbt.Dbt.get_request(url)
+        url = dbt.get_api_url("/library/volume", {"language_family_code": dbt.language, "media": "text"})
+        testaments = dbt.get_request(url)
         for testament in testaments:
             if self.name != testament["version_code"]:
                 continue

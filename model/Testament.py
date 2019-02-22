@@ -14,10 +14,10 @@ class Testament:
         return super().__repr__()
 
 
-    def get_books(self):
+    def get_books(self, dbt):
         book_list = []
-        url = util.Dbt.Dbt.get_api_url("/library/book", {"dam_id": self.damn_id})
-        books = util.Dbt.Dbt.get_request(url)
+        url = dbt.get_api_url("/library/book", {"dam_id": self.damn_id})
+        books = dbt.get_request(url)
 
         for book in books:
             b = Book(self,

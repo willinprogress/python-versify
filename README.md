@@ -6,11 +6,12 @@ python-versify is a pure python library wich can find many verses on the bible. 
 Look how python-versify is usefull
 
 ```python
-import versify
+from versify.util.Dbt import Dbt
+
+dbt = Dbt(config_path="/path/to/config.ini")
 
 # DBY is the code of Darby
-print(Dbt.find_verse("DBY", "1 Timothée", 2, 1))
-print(Dbt.find_verse("DBY", "Genèse", 9))
+print(dbt.find_verse("DBY", "1 Timothée", 2, 1))
 
 ```
 Features support
@@ -27,6 +28,16 @@ To install python-versify, simple use pip like that:
 ```bash
 pip install python-versify
 ```
+
+You need a config file for Dbt like : 
+
+```ini
+[dbt]
+key = yourDbtKey
+lang = FRN
+```
+
+
 
 Documentation
 -------------
