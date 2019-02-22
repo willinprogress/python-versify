@@ -5,5 +5,3 @@
 """
 
 __version__ = "0.1.0"
-
-from versify.util import Dbt

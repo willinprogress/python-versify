@@ -11,7 +11,6 @@ print(install_requires)
 
 setup(
 
-    # le nom de votre bibliothèque, tel qu'il apparaitre sur pypi
     name='versify',
 
     version=versify.__version__,
