@@ -75,11 +75,12 @@ class Dbt:
         result = {}
         url = self.get_api_url("/library/bookname", {"language_code": self.language})
         data = self.get_request(url)
+
         for item in data:
             for k, v in item.items():
                 result[k] = v.replace("IIIième ", "3").replace("IIième ", "2").replace("Iier ", "1")
 
-        return result
+        return result.values()
 
     def find_chapter(self, version, book, chapter_number):
         book = self.normalize_book(book)
@@ -96,6 +97,7 @@ class Dbt:
 
             for book in books:
                 if Dbt.book_equals(book['book_name'], book_name):
+
                     b = Book(t,
                              book['book_name'],
                              book['book_id'],
