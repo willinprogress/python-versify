@@ -2,3 +2,4 @@ venv
 *.pyc
 *.zip
 .idea
+config.ini
