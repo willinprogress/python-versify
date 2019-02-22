@@ -3,10 +3,8 @@
 from setuptools import setup, find_packages
 
 import versify
-import os
 
-with open(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'requirements.txt')) as fp:
-    install_requires = fp.read()
+install_requires = ['requests==2.21.0']
 
 setup(
 
