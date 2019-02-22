@@ -3,11 +3,10 @@
 from setuptools import setup, find_packages
 
 import versify
+import os
 
-with open('requirements.txt') as fp:
+with open(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'requirements.txt')) as fp:
     install_requires = fp.read()
-
-print(install_requires)
 
 setup(
 
@@ -25,7 +24,7 @@ setup(
 
     long_description=open('README.md').read(),
 
-    install_requires= install_requires,
+    install_requires=install_requires,
 
     include_package_data=True,
 
