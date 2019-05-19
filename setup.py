@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 import versify
 
-install_requires = ['requests==2.21.0']
+install_requires = ['requests==2.21.0', 'configparser==3.7.4']
 
 setup(
 

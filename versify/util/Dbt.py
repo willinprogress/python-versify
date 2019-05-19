@@ -1,3 +1,16 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+    Implementation of wrapper of Dbt.
+
+    Usage:
+
+    >>> from versify import Dbt
+    >>> dbt = Dbt(config_path="/path/to/config.ini")
+    >>> print(dbt.find_verse("DBY", "1 Timothée", 2, 1))
+"""
+
 import random
 import configparser
 import requests
@@ -38,7 +51,9 @@ def levenshtein_distance(a, b):
 
 
 class Dbt:
-
+    """
+    This class implement a wrapper on API Dbt
+    """
     def __init__(self, config_path):
         self.config = get_config(config_path)
         self.base_url = "https://dbt.io"
@@ -57,6 +72,12 @@ class Dbt:
         return book_name1.lower().strip() == book_name2.lower().strip()
 
     def get_request(self, url, attempt=0):
+        """
+        This function make get request on url with some attemps
+        :param url: url to make your get request
+        :param attempt: number of the current attempt
+        :return: response object of get request
+        """
         try:
             return requests.get(url=url).json()
         except (RequestException, HTTPError, ProxyError, Timeout, ConnectTimeout):
@@ -72,6 +93,10 @@ class Dbt:
         return url
 
     def get_osis_code(self):
+        """
+        Get the list of osis codes on Dbt
+        :return: list of osis code on Dbt
+        """
         result = {}
         url = self.get_api_url("/library/bookname", {"language_code": self.language})
         data = self.get_request(url)
@@ -83,11 +108,24 @@ class Dbt:
         return result.values()
 
     def find_chapter(self, version, book, chapter_number):
+        """
+        Find a chapter object in book
+        :param version: bible version instance
+        :param book: book instance
+        :param chapter_number: number of chapter
+        :return: Instance of chapter
+        """
         book = self.normalize_book(book)
         bk = self.find_book(version, book)
         return Chapter(bk, chapter_number)
 
     def find_book(self, vers, book_name):
+        """
+        Find a book in bible
+        :param vers: bible version instance
+        :param book_name: name of book in string
+        :return: Instance of book
+        """
         version = self.find_version(vers)
 
         for t in version.testaments:

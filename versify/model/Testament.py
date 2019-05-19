@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 from versify.model.Book import Book
 from versify.model.Chapter import Chapter
 
