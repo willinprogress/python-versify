@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-    Implementation of wrapper of Dbt.
+    Wrapper implementation of Dbt API.
 
     Usage:
 
@@ -25,6 +25,11 @@ from versify.model.Version import Version
 
 
 def get_config(config_path):
+    """
+    Get config data
+    :param config_path: filepath of config ini file
+    :return: instance of ini config file
+    """
     config = configparser.ConfigParser()
     config.read(config_path)
     return config
@@ -214,6 +219,11 @@ class Dbt:
         return None
 
     def get_random_verse(self, version):
+        """
+        Get a random verse on bible
+        :param version: text version of bible (DBY, etc.)
+        :return: instance of Verse object
+        """
         version_obj = Version(version, version)
         testaments = version_obj.get_testaments(self)
         select_testament = random.choice(testaments)

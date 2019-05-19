@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+
 class Verse:
     def __init__(self, chapter, verse_number, text):
         self.verse_number = verse_number

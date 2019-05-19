@@ -11,6 +11,7 @@ Welcome to versify's documentation!
 
    install
    quick_start
+   api
 
 
 

@@ -10,6 +10,11 @@ class Chapter:
         self.book = book
 
     def get_verses(self, dbt):
+        """
+        Get list of verses of this chapter
+        :param dbt: Dbt instance
+        :return: list of verses
+        """
         list_verses = []
         url = dbt.get_api_url("/text/verse", {
             "dam_id": self.book.testament.damn_id,

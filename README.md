@@ -8,7 +8,7 @@ python-versify is a pure python library wich can find many verses on the bible. 
 Look how python-versify is usefull
 
 ```python
-from versify import Dbt
+from versify.util.Dbt import Dbt
 
 dbt = Dbt(config_path="/path/to/config.ini")
 
