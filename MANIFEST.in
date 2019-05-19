@@ -1,1 +1,1 @@
-include *.md AUTHORS LICENSE *.txt
+include *.md AUTHORS LICENSE *.txt *.rst
